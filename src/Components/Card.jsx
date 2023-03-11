@@ -26,7 +26,7 @@ export default function Card({ name, image, price, id, item }) {
         newCart = [...FilteredCart, { ...existingItem, count: newCount }];
       }
     } else {
-      setCount(1);
+      setCount(value === -1 ? 0 : 1);
       newCart = [...carts, { ...item, count: 1 }];
     }
 
