@@ -4,6 +4,7 @@ import { RecoilRoot } from "recoil";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
+import Navbar from "@/Components/Navbar";
 
 export default function App({ Component, pageProps }) {
   return (
@@ -13,6 +14,7 @@ export default function App({ Component, pageProps }) {
           font-family: ${inter.style.fontFamily};
         }
       `}</style>
+      <Navbar />
       <Component {...pageProps} />
     </RecoilRoot>
   );

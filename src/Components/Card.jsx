@@ -7,7 +7,12 @@ import { useRecoilState } from "recoil";
 
 export default function Card({ name, image, price, id, item }) {
   const [carts, setCarts] = useRecoilState(cartState);
-  const [Count, setCount] = useState(0);
+  const [Count, setCount] = useState(item?.Count ?? 0);
+
+  useEffect(() => {
+    const existingItem = carts.find((it) => it.id === item.id);
+    setCount(existingItem?.count ?? 0);
+  }, []);
 
   const CounterHandler = (value) => {
     const existingItem = carts.find((it) => it.id === item.id);
