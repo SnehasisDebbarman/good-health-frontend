@@ -24,7 +24,6 @@ export default function Index() {
     router.beforePopState(async ({ as }) => {
       if (as !== router.asPath) {
         //
-
         const fakeData = {
           username: faker.name.firstName(),
           email: userEmail,
