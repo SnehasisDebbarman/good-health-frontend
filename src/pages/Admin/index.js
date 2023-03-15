@@ -43,6 +43,7 @@ export default function Page() {
 
     setUniqueOrderId([...new Set(orderIds)]);
   };
+
   if (Loading) {
     <p>Loading...</p>;
   }
@@ -51,10 +52,21 @@ export default function Page() {
     <div>
       <div className="py-8 w-full  bg-slate-300 ">
         <div className="grid grid-cols-2">
-          <div className=" p-20">
-            <h3 className="absolute">
-              Total Messages sent: {messagesSent.length}{" "}
-            </h3>
+          <div className=" p-20 mt-40 grid grid-cols-2 gap-5">
+            <div className=" h-32 p-5 bg-white rounded-lg ">
+              <h3 className=" text-black text-center">Total Messages sent</h3>
+              <p className="text-black text-4xl text-center pt-4">
+                {messagesSent.length}
+              </p>
+            </div>
+            <div className=" h-32 p-5 bg-white rounded-lg">
+              <h3 className=" text-black text-center">
+                Total orders left in cart
+              </h3>
+              <p className="text-black text-4xl text-center pt-4">
+                {UniqueOrderId.length}
+              </p>
+            </div>
           </div>
           <div className="">
             <h2 className="text-center text-3xl text-slate-800 py-12">
